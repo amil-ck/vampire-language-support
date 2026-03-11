@@ -1,0 +1,25 @@
+{
+  "name": "vampire-language-support",
+  "displayName": "Vampire Language Support",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.110.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "vampire",
+      "aliases": ["Vampire", "vampire"],
+      "extensions": [".p"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "vampire",
+      "scopeName": "source.vampire",
+      "path": "./syntaxes/vampire.tmLanguage.json"
+    }]
+  }
+}
