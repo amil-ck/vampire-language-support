@@ -13,7 +13,7 @@
     "languages": [{
       "id": "vampire",
       "aliases": ["Vampire", "vampire"],
-      "extensions": [".p"],
+      "extensions": [".p", ".tff"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{

@@ -3,6 +3,18 @@
 	"name": "Vampire",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
+			"include": "#builtins"
+		},
+		{
+			"include": "#function-call"
+		},
+		{
+			"include": "#operators"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -26,7 +38,57 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"comments": {
+			"match": "%.*$",
+			"name": "comment.line.percentage.vampire"
+		},
+		"operators": {
+			"patterns": [
+				{
+					"comment": "idk what these are",
+					"match": "(<=>|=>|=|&|~|\\|)",
+					"name": "keyword.operator.comparison.vampire"
+				},
+				{
+					"match": "!",
+					"name": "keyword.operator.bang.vampire"
+				},
+				{
+					"match": "\\?",
+					"name": "keyword.operator.question.vampire"
+				}
+			]
+		},
+		"existentials": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.vampire",
+					"match": "\\\\."
+				}
+			]
+
+		},
+		"builtins": {
+			"patterns": [
+				{
+					"comment": "Built-in functions",
+					"match": "(?<!\\.)\\b(fof)\\b",
+					"name": "support.function.builtin.vampire"
+				},
+				{
+					"comment": "Built-in Constants",
+					"match": "\\b(axiom|definition|conjecture)\\b",
+					"name": "constant.language.vampire"
+				}
+			]
+		},
+		"function-call": {
+			"comment": "function call",
+			"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+			"name": "entity.name.function.call.vampire"
 		}
+
 	},
 	"scopeName": "source.vampire"
 }
